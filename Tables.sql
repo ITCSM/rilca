@@ -37,15 +37,15 @@ PRIMARY KEY(S_ID),
 FOREIGN KEY (S_ID) REFERENCES STAFF(Staff_ID));
 
 CREATE TABLE RILCA.PA_ITEM (
-Item_ID INT(5),
-Parent_id INT(5),
-G_Desc_eng VARCHAR(100),
-G_Desc_thai VARCHAR(100),
+Item_ID varchar(20),
+Parent_id varchar(20),
+G_Desc_eng varchar(300),
+G_Desc_thai VARCHAR(300),
 PRIMARY KEY (Item_ID),
 FOREIGN KEY (Parent_id) REFERENCES RILCA.PA_ITEM(Item_ID));
 
 CREATE TABLE RILCA.PA_DOCUMENT (
-Doc_ID VARCHAR(10),
+Doc_ID varchar(100),
 Doc_year VARCHAR(5),
 Doc_Status VARCHAR(20),
 DirSign_Date DATE,
@@ -65,8 +65,8 @@ FOREIGN KEY (Acad_ID) REFERENCES RILCA.ACADEMIC_STAFF(Ac_ID));
 
 CREATE TABLE RILCA.PA_LINE (
 PAline_Score int(5),
-PADoc_ID VARCHAR(10),
-PAitem_ID INT(5),
+PADoc_ID varchar(100),
+PAitem_ID varchar(20),
 SS_ID VARCHAR(10),
 upsert_date DATE,
 FOREIGN KEY (PADoc_ID) REFERENCES PA_DOCUMENT(Doc_ID),
